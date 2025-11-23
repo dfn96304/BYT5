@@ -19,10 +19,10 @@ namespace DesignPattern.Adapter
                     
                     employeesList.Add(new Employee(ID, name, designation, salary));
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     Console.Error.WriteLine("EmployeeAdapter: exception while processing");
-                    throw ex;
+                    throw;
                 }
             }
             thirdPartyBillingSystem.ProcessSalary(employeesList);
