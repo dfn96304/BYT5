@@ -11,7 +11,7 @@ namespace DesignPattern.Observer
         //4. Removing the Observer from the Subject
         //5. Observer will get a notification from the Subject using the following Method
         
-        public string UserName { get; set; } = userName; // 1
+        public string UserName { get; set; } = userName; // 1, 2 (primary constructor)
         
         public void AddSubscriber(ISubject subject) // 3
         {
@@ -23,9 +23,10 @@ namespace DesignPattern.Observer
             subject.RemoveObserver(this);
         }
 
-        public void Update(string availability)
+        public void Update(string availability) // 5
         {
-            
+            Console.WriteLine($"[Notification to {UserName}] A subject is {availability}");
         }
     }
 }
+    
